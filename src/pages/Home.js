@@ -1,15 +1,34 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Helmet from 'react-helmet';
+
+import articleService from '../services/ArticleService';
 
 class HomePage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      article: null
+    };
+  }
+
+  componentDidMount() {
+    articleService.fetchArticle()
+
+      .then(article => {
+        console.log(this, article);
+        this.setState({ article: article });
+      });
   }
 
   render() {
     return (
       <div>
-        Home page
+        <Helmet>
+          <title>Hackernews client</title>
+        </Helmet>
+
+        { this.state.article ? this.state.article['by'] : 'Loading...' }
       </div>
     );
   }

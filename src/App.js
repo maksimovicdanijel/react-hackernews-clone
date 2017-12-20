@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./App.css";
+import './App.css';
 
-import Main from "./Main";
-import PageHeader from "./components/PageHeader";
+import Main from './Main';
+import PageHeader from './components/PageHeader';
 
 class App extends Component {
   render() {
