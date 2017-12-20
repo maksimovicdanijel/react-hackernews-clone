@@ -1,21 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Container from "./Container";
+import { NavLink } from "react-router-dom";
+import Logo from "./Logo";
 
-import { Container } from "semantic-ui-react";
-import { Menu } from "semantic-ui-react";
-
-let PageHeader = props => {
+let PageHeader = () => {
   return (
     <header className="page-header">
       <Container>
-        <Menu>
-          <Menu.Item>
-            <Link to="/">Home</Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Link to="/top">Top</Link>
-          </Menu.Item>
-        </Menu>
+        <div class="page-header__logo-container">
+          <Logo />
+        </div>
+        
+        <ul className="page-header__menu">
+          <li class="page-header__menu-item">
+            <NavLink exact activeClassName="page-header__menu-item__link--active" className="page-header__menu-item__link" to="/">Home</NavLink>
+          </li>
+          <li class="page-header__menu-item">
+            <NavLink exact activeClassName="page-header__menu-item__link--active" className="page-header__menu-item__link" to="/top">Top</NavLink>
+          </li>
+        </ul>
       </Container>
     </header>
   );

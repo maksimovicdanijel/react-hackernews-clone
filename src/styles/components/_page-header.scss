@@ -1,0 +1,41 @@
+.page-header {
+    background: #f60;
+    height: 55px;
+
+    &__logo-container {
+        float: left;
+
+        line-height: 55px;
+        height: 55px;
+    }
+
+    &__menu {
+        list-style: none;
+        margin: 0;
+
+        float: left;
+
+        line-height: 55px;
+
+        @extend .clearfix;
+    }
+
+    &__menu-item {
+        float: left;
+        color: #fff;
+
+        margin-right: 20px;
+    }
+
+    &__menu-item__link {
+        color: rgba(#fff, .8);
+        text-decoration: none;
+
+        transition: .15s color ease;
+    }
+
+    &__menu-item__link--active,
+    &__menu-item__link:hover  {
+        color: #fff;
+    }
+}

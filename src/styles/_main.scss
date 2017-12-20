@@ -1,0 +1,11 @@
+@import './extends';
+@import './variables';
+@import './mixins';
+
+@import 'components';
+
+body {
+    font-family: $mainFont;
+    font-size: 16px;
+    line-height: 1.6;
+}
