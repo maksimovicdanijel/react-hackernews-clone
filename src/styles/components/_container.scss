@@ -1,7 +1,11 @@
 .container {
-    width: 1024px;
+    width: 80%;
 
     margin: 0 auto;
 
     @extend .clearfix;
+
+    @media (min-width: 1200px) {
+        width: 1024px;
+    }
 }

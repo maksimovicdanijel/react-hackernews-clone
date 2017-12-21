@@ -8,4 +8,13 @@ body {
     font-family: $mainFont;
     font-size: 16px;
     line-height: 1.6;
+    background-color: #f2f3f5;
+    color: $textColor;
+}
+
+a {
+    text-decoration: none;
+    color: $mainColor;
+
+    transition: color .15s ease;
 }

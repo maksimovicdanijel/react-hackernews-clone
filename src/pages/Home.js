@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import articleService from '../services/ArticleService';
+import ListItemContainer from '../components/ListItemContainer';
 
 class HomePage extends Component {
   constructor(props) {
@@ -16,9 +17,19 @@ class HomePage extends Component {
     articleService.fetchArticle()
 
       .then(article => {
-        console.log(this, article);
         this.setState({ article: article });
       });
+  }
+
+  renderList() {
+    const items = [
+      this.state.article,
+      this.state.article
+    ];
+
+    return (
+      <ListItemContainer items={ items } />
+    );
   }
 
   render() {
@@ -28,7 +39,7 @@ class HomePage extends Component {
           <title>Hackernews client</title>
         </Helmet>
 
-        { this.state.article ? this.state.article['by'] : 'Loading...' }
+        { this.state.article ? this.renderList() : 'Loading...' }
       </div>
     );
   }

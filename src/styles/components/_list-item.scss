@@ -1,0 +1,44 @@
+.list-item {
+    background: #fff;
+    position: relative;
+    margin-bottom: 10px;
+
+    @extend .clearfix;
+
+    &__score {
+        position: absolute;
+
+        width: 90px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        text-align: center;
+        color: $mainColor;
+        font-weight: bold;
+    }
+
+    &__content {
+        padding: 20px 20px 20px 90px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+
+        a {
+            color: $textColor;
+        }
+
+        a:hover {
+            color: $mainColor;
+        }
+    }
+
+    &__meta {
+        color: #828282;
+        font-size: 14px;
+    }
+
+    &__author {
+        margin-right: 5px;
+    }
+}
