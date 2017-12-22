@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import articleService from '../services/ArticleService';
 import ListItemContainer from '../components/ListItemContainer';
+import Loader from '../components/Loader';
 
 class HomePage extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class HomePage extends Component {
           <title>Hackernews client</title>
         </Helmet>
 
-        { this.state.items.length ? this.renderList() : 'Loading...' }
+        { this.state.items.length ? this.renderList() : <Loader /> }
       </div>
     );
   }
