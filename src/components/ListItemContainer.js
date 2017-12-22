@@ -17,9 +17,9 @@ class ListItemContainer extends Component {
     }
 
     const listItems = this.props.items.map((item) => {
-      let { id, by, title, url, score, time } = item;
+      let { objectID, author, title, url, points, created_at_i } = item;
 
-      return <ListItem key={ id } by={ by } title={ title } url={ url } score={ score } time={ time } />;
+      return <ListItem key={ objectID } author={ author } title={ title } url={ url } points={ points } time={ created_at_i } />;
     });
 
     return listItems;

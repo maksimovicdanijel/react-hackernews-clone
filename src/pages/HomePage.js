@@ -9,26 +9,21 @@ class HomePage extends Component {
     super(props);
 
     this.state = {
-      article: null
+      items: []
     };
   }
 
   componentDidMount() {
-    articleService.fetchArticle()
+    articleService.fetchHomePage()
 
-      .then(article => {
-        this.setState({ article: article });
+      .then(articles => {
+        this.setState({ items: articles });
       });
   }
 
   renderList() {
-    const items = [
-      this.state.article,
-      this.state.article
-    ];
-
     return (
-      <ListItemContainer items={ items } />
+      <ListItemContainer items={ this.state.items } />
     );
   }
 
@@ -39,7 +34,7 @@ class HomePage extends Component {
           <title>Hackernews client</title>
         </Helmet>
 
-        { this.state.article ? this.renderList() : 'Loading...' }
+        { this.state.items.length ? this.renderList() : 'Loading...' }
       </div>
     );
   }

@@ -13,10 +13,13 @@ let PageHeader = () => {
         
         <ul className="page-header__menu">
           <li className="page-header__menu-item">
-            <NavLink exact activeClassName="page-header__menu-item__link--active" className="page-header__menu-item__link" to="/">Home</NavLink>
+            <NavLink to="/" exact activeClassName="page-header__menu-item__link--active" className="page-header__menu-item__link">Home</NavLink>
           </li>
           <li className="page-header__menu-item">
-            <NavLink exact activeClassName="page-header__menu-item__link--active" className="page-header__menu-item__link" to="/top">Top</NavLink>
+            <NavLink to="/top" exact activeClassName="page-header__menu-item__link--active" className="page-header__menu-item__link">Top</NavLink>
+          </li>
+          <li className="page-header__menu-item">
+            <NavLink to="/recent" exact activeClassName="page-header__menu-item__link--active" className="page-header__menu-item__link">Recent</NavLink>
           </li>
         </ul>
       </Container>
